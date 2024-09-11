@@ -1,16 +1,22 @@
 def lab1Question1(input_gb):
     # Convert the input of a number of gigabytes to the number of bytes
-    num_bytes = None
+    num_bytes = 1024*1024*1024
+    
     # Do the work here
     # The solution to this goes here (and in all of them below...)
     # Set the variable num_bytes to the answer and return it
-
+    num_bytes = input_gb *num_bytes
     return num_bytes
 
 def lab1Question2(name):
     # Take an input of a name, return True if there is an odd number of characters in the name, False otherwise
     # Return None if the input is not a string
     is_odd = None
+    if type(name)==str:
+        if len(name)%2 ==1:
+            is_odd=True
+        else:
+            is_odd=False
 
     return is_odd
 
@@ -18,7 +24,8 @@ def lab1Question3(input_string, input_number):
     # Take in two inputs - a string and a number
     # Return the character of the string in the index given by number.  If this index does not exist, then return -1.
     character_at = -1
-
+    if input_number>=0 and input_number<len(input_string):
+        character_at=input_string[input_number]
     return character_at
 
 def lab1Question4(file_name):
@@ -44,8 +51,8 @@ def lab1Question6(quarters, dimes, nickels, pennies):
 
 ## Example of calling a function to test these... 
 # Question 1 Check:
-in_gb = 10
-expected_bytes = 10*1024*1024*1024
+in_gb = 1
+expected_bytes = 1*1024*1024*1024
 calculated_bytes = lab1Question1(in_gb)
 
 print("Input gigabytes: ", in_gb)
@@ -61,3 +68,27 @@ else:
 # Determining how to check if your code works, and define specific tests for what "working" means is 
 # something that allows you to tackele any larger problem - you can break it into smaller bits, attack one bit at a time,
 # check to ensure you've done it correctly, and then move on to the next bit.
+# Question 1 Check:
+name='Bob'
+expected = True
+calculated=lab1Question2(name)
+print("Input name: ", name)
+print("Expected output: ", expected)
+print("Calculated output: ", calculated)
+if expected == calculated:
+    print("Test passed")
+else:
+    print("Test failed")
+
+input_string = "Python"
+input_number = 10
+character3=lab1Question3(input_string, input_number)
+excepted3=-1
+print("Input str: ", input_string)
+print("Input num: ", input_number)
+print("Expected output: ", excepted3)
+print("Calculated output: ", character3)
+if excepted3 == character3:
+    print("Test passed")
+else:
+    print("Test failed")
