@@ -48,6 +48,7 @@ def lab1Question5(list_numbers):
     mode_of_list=st.mode(list_numbers)
     return mode_of_list
 
+
 def lab1Question6(quarters, dimes, nickels, pennies):
     # Take in 4 inputs - the number of quarters, dimes, nickels, and pennies in a handful
     # Return the total amount in dollars
