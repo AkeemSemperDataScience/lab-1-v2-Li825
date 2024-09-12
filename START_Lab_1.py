@@ -31,6 +31,7 @@ def lab1Question3(input_string, input_number):
         character_at=input_string[input_number]
     return character_at
 
+
 def lab1Question4(file_name):
     # Take an input of a file name. 
     # Read that file and return a list of all numbers in that file
