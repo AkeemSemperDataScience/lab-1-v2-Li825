@@ -1,3 +1,6 @@
+import pytest
+
+
 def lab1Question1(input_gb):
     # Convert the input of a number of gigabytes to the number of bytes
     num_bytes = 1024*1024*1024
@@ -32,14 +35,17 @@ def lab1Question4(file_name):
     # Take an input of a file name. 
     # Read that file and return a list of all numbers in that file
     list_of_nums = []
-
+    with open(file_name, 'r') as file:
+        list_of_nums=file.readlines()
+    list_of_nums=[int(i) for i in list_of_nums]
     return list_of_nums
 
 def lab1Question5(list_numbers):
     # Take an input of a list of numbers
     # Return the mode from that list. 
+    import statistics as st
     mode_of_list = None
-
+    mode_of_list=st.mode(list_numbers)
     return mode_of_list
 
 def lab1Question6(quarters, dimes, nickels, pennies):
@@ -47,6 +53,9 @@ def lab1Question6(quarters, dimes, nickels, pennies):
     # Return the total amount in dollars
     # For example, if the handful contains 4 quarters, 3 dimes, 2 nickels, and 1 penny, the function should return 1.41.
     total = None
+    total=quarters*0.25+dimes*0.1+nickels*0.05 + pennies *0.01
+    total=round(total, 2)
+    print(total)
     return total
 
 ## Example of calling a function to test these... 
@@ -69,26 +78,5 @@ else:
 # something that allows you to tackele any larger problem - you can break it into smaller bits, attack one bit at a time,
 # check to ensure you've done it correctly, and then move on to the next bit.
 # Question 1 Check:
-name='Bob'
-expected = True
-calculated=lab1Question2(name)
-print("Input name: ", name)
-print("Expected output: ", expected)
-print("Calculated output: ", calculated)
-if expected == calculated:
-    print("Test passed")
-else:
-    print("Test failed")
 
-input_string = "Python"
-input_number = 10
-character3=lab1Question3(input_string, input_number)
-excepted3=-1
-print("Input str: ", input_string)
-print("Input num: ", input_number)
-print("Expected output: ", excepted3)
-print("Calculated output: ", character3)
-if excepted3 == character3:
-    print("Test passed")
-else:
-    print("Test failed")
+
