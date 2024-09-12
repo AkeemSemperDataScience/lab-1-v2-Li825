@@ -55,7 +55,7 @@ def lab1Question6(quarters, dimes, nickels, pennies):
     total = None
     total=quarters*0.25+dimes*0.1+nickels*0.05 + pennies *0.01
     total=round(total, 2)
-    print(total)
+ 
     return total
 
 ## Example of calling a function to test these... 
